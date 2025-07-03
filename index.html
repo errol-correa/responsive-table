@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive User Table</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>👥 User Dashboard</h1>
+      <button id="toggleModeBtn" onclick="toggleDarkMode()">🌙</button>
+    </header>
+
+    <div class="search-container">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="🔍 Search by name..."
+        onkeyup="filterTable()"
+      />
+    </div>
+
+    <div class="table-wrapper">
+      <table id="userTable">
+        <thead>
+          <tr>
+            <th onclick="sortTable(0)">Name</th>
+            <th onclick="sortTable(1)">Email</th>
+            <th onclick="sortTable(2)">Age</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Alice</td><td>alice@example.com</td><td>24</td></tr>
+          <tr><td>Bob</td><td>bob@example.com</td><td>30</td></tr>
+          <tr><td>Charlie</td><td>charlie@example.com</td><td>28</td></tr>
+          <tr><td>David</td><td>david@example.com</td><td>35</td></tr>
+          <tr><td>Eve</td><td>eve@example.com</td><td>22</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
