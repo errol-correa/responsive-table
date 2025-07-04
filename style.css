@@ -38,7 +38,6 @@ header h1 {
   color: #007BFF;
 }
 
-/* Toggle Button - icon only */
 #toggleModeBtn {
   background-color: transparent;
   border: none;
@@ -51,7 +50,6 @@ header h1 {
   color: #0056b3;
 }
 
-/* Search */
 .search-container {
   margin-bottom: 20px;
 }
@@ -71,7 +69,6 @@ input[type="text"]:focus {
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
 }
 
-/* Table Styling */
 .table-wrapper {
   overflow-x: auto;
 }
@@ -95,10 +92,26 @@ thead th {
   background-color: #007BFF;
   color: white;
   cursor: pointer;
+  position: relative;
 }
 
 thead th:hover {
   background-color: #0056b3;
+}
+
+.sort-arrow {
+  margin-left: 8px;
+  font-size: 12px;
+  color: white;
+  transition: transform 0.2s ease-in-out;
+}
+
+thead th.sorted-asc .sort-arrow::after {
+  content: "▲";
+}
+
+thead th.sorted-desc .sort-arrow::after {
+  content: "▼";
 }
 
 tbody tr:nth-child(even) {
@@ -109,7 +122,6 @@ tbody tr:hover {
   background-color: #f1f1f1;
 }
 
-/* 📱 Mobile: Keep table columns, shrink font and padding */
 @media screen and (max-width: 768px) {
   th, td {
     font-size: 14px;
@@ -131,7 +143,6 @@ tbody tr:hover {
   }
 }
 
-/* 🌙 Dark Mode */
 body.dark-mode {
   background: linear-gradient(135deg, #121212, #1e1e1e);
   color: #f0f0f0;
@@ -166,5 +177,9 @@ body.dark-mode tbody tr:hover {
 }
 
 body.dark-mode #toggleModeBtn {
+  color: #f0ad4e;
+}
+
+body.dark-mode .sort-arrow {
   color: #f0ad4e;
 }
